@@ -1,0 +1,9 @@
+# From https://github.com/papertrail/remote_syslog2/blob/master/examples/log_files.yml.example.advanced
+files:
+exclude_files:
+exclude_patterns:
+destination:
+  host: {{ papertrail_host }}
+  port: {{ papertrail_port }}
+  protocol: tls
+new_file_check_interval: "10" # Check every 10 seconds

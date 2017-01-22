@@ -31,10 +31,15 @@
   template: src="90-papertrail.conf.j2"
             dest="/etc/rsyslog.d/90-papertrail.conf"
   notify:
-    - Restart Rsyslog
+    - Restart rsyslog
 
-- name: Configure Papertrail service definition
-  template: src="remote_syslog.conf.j2"
-            dest="/etc/init/remote_syslog.conf"
+- name: Create Papertrail service
+  template: src=remote_syslog.service.j2 dest=/lib/systemd/system/remote_syslog.service mode=644
+  notify:
+    - Reload systemctl
+    - Restart remote_syslog
+
+- name: Configure Papertrail service
+  template: src=log_files.yml.j2 dest=/etc/log_files.yml mode=644
   notify:
     - Restart remote_syslog
