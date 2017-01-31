@@ -1,7 +1,7 @@
 ---
 papertrail_version: "0.19"
 papertrail_conf: "/etc/log_files.yml"
-papertrail_host: "logs2.papertrailapp.com"
-papertrail_port: 45551
+papertrail_host: "logs5.papertrailapp.com"
+papertrail_port: 47317
 papertrail_preserve_fqdn: 'off'
 papertrail_app_logs: ''
